@@ -1,0 +1,232 @@
+---
+import PageLayout from '../layouts/BaseLayout.astro'
+import Section from '../components/Section.astro'
+import Card from '../components/Card.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import Label from '../components/Label.astro'
+import SkillLayout from '../components/SkillLayout.astro'
+
+import { Image } from 'astro:assets'
+
+const languages = ['Python', 'JavaScript', 'TypeScript', 'SQL'];
+const frontend = ['HTML', 'CSS', 'TailwindCSS', 'React'];
+const databases = ['MySQL', 'PostgreSQL'];
+const tools = ['Git', 'GitHub', 'Figma', 'Adobe Creative Suite', 'Netlify', 'Vercel', 'AWS (básico)'];
+const softSkills = [
+	'Resolución de problemas',
+	'Comunicación efectiva',
+	'Liderazgo',
+	'Trabajo en equipo',
+	'Autodidacta',
+	'Adaptabilidad'
+];
+
+
+---
+
+<PageLayout meta={{ title: 'Inicio' }}>
+	<div class='flex w-full flex-col gap-y-10'>
+		<section class='flex flex-col items-center gap-y-7'>
+			<Image
+				src='/src/assets/emoji.png'
+				alt='foto de perfil'
+				class='h-48 w-auto rounded-full bg-green-400 p-2'
+				loading='eager'
+				width={150}
+				height={150}
+			/>
+
+			<div class='flex flex-col items-center gap-y-4'>
+				<h1 class='text-3xl font-bold'>hola! soy tobías.</h1>
+				<a
+					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
+				>
+					<span class='relative flex items-center justify-center'>
+						<span
+							class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
+						></span>
+						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
+					</span>
+
+					<p class='font-medium'>Disponible para trabajar</p>
+				</a>
+				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
+					<Label title='Ingeniero en Sistemas'>
+						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
+							><path
+								fill='currentColor'
+								d='M4.615 20q-.69 0-1.152-.462Q3 19.075 3 18.385v-9.77q0-.69.463-1.152Q3.925 7 4.615 7H9V5.615q0-.69.463-1.152Q9.925 4 10.615 4h2.77q.69 0 1.153.463q.462.462.462 1.152V7h4.385q.69 0 1.152.463q.463.462.463 1.152v9.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h14.77q.23 0 .423-.192q.192-.193.192-.423v-9.77q0-.23-.192-.423Q19.615 8 19.385 8H4.615q-.23 0-.423.192Q4 8.385 4 8.615v9.77q0 .23.192.423q.193.192.423.192M10 7h4V5.615q0-.23-.192-.423Q13.615 5 13.385 5h-2.77q-.23 0-.423.192q-.192.193-.192.423zM4 19V8z'
+							></path></svg
+						>
+					</Label>
+					<Label title='Santa Marta, Magdalena, Colombia'>
+						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
+							><path
+								fill='currentColor'
+								d='M12.003 11.73q.668 0 1.14-.475q.472-.475.472-1.143t-.475-1.14q-.476-.472-1.143-.472t-1.14.476q-.472.475-.472 1.143t.475 1.14q.476.472 1.143.472M12 19.677q2.82-2.454 4.458-4.991q1.638-2.538 1.638-4.39q0-2.744-1.737-4.53T12 3.981q-2.621 0-4.359 1.785t-1.737 4.53q0 1.852 1.638 4.39q1.639 2.537 4.458 4.99m0 1.343q-3.525-3.117-5.31-5.814q-1.786-2.697-1.786-4.909q0-3.173 2.066-5.234Q9.037 3 12 3t5.03 2.062q2.066 2.061 2.066 5.234q0 2.212-1.785 4.909q-1.786 2.697-5.311 5.814m0-10.904'
+							></path></svg
+						>
+					</Label>
+					<Label
+						title='Contáctame en LinkedIn'
+						as='a'
+						href='https://www.linkedin.com/in/tobias-romero/'
+						target='_blank'
+					>
+						<svg
+							xmlns='http://www.w3.org/2000/svg'
+							viewBox='0 0 16 16'
+							slot='icon'
+							class='h-5 w-5 text-foreground/75'
+							><path
+								fill='currentColor'
+								d='M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248c-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586c.173-.431.568-.878 1.232-.878c.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252c-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z'
+							></path></svg
+						>
+					</Label>
+				</div>
+			</div>
+		</section>
+
+		<Section title='Sobre mi.'>
+			<p class='text-muted-foreground'>
+				Soy un estudiante de Ingeniería de Sistemas, con aficiones por el desarrollo web y la formulación de proyectos que involucren sistemas de información en organizaciones. <br/>
+				<br/>
+				Tengo experiencia trabajando con tecnologías como Java y Python, así como frameworks modernos como React y Astro. Además, cuento con conocimientos en bases de datos relacionales lo que me permite desarrollar soluciones eficientes.<br />
+				<br />
+				Me caracterizo por mi capacidad de adaptabilidad, pensamiento analítico y enfoque autodidacta, lo que me permite estar en constante aprendizaje y actualización. Disfruto trabajando en equipo, asumiendo desafíos y proponiendo estrategias innovadoras para el desarrollo de proyectos.<br />
+				<br />
+				Siempre busco nuevas oportunidades para crecer profesionalmente y aportar valor a los equipos en los que participo.
+			</p>
+		</Section>
+
+		<Section title='Experiencia.'>
+			<Card
+				heading='Diseñador y Maquetador Web.'
+				subheading='AF Modamentes.'
+				date='Febrero 2022 - Febrero 2023'
+				imagePath='/src/assets/job.png'
+				altText='Icono de experiencia'
+				imageClass='h-24 w-auto md:-left-28'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>Desarrollé páginas web usando Wordpress.</li>
+					<li>Realicé diseños de maqueta de páginas web para negocios locales.</li>
+					<li>Di asesorías tecnológicas, ayudando a empresas a implementar herramientas digitales que optimicen sus procesos y mejoren su presencia en línea. </li>
+				</ul>
+			</Card>
+			<Card
+				heading='Diseñador gráfico.'
+				subheading='AF Modamentes.'
+				date='Febrero 2021 - Enero 2022'
+				imagePath='/src/assets/designer2.1.png'
+				altText='Icono de experiencia'
+				imageClass='h-24 w-auto md:-left-28'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>Diseñé posters, banners y videos publicitarios para emprendimientos locales.</li>
+					<li>Realicé diseños de rebranding y publicidad para posicionamientos de empresas online.</li>
+				</ul>
+			</Card>
+		</Section>
+
+		<Section title='Educación.'>
+			<Card
+				heading='Ingeniería de Sistemas.'
+				subheading='Universidad del Magdalena.'
+				date='Febrero 2022 - Actualmente'
+				imagePath='/src/assets/studying.png'
+				altText='Lorem, ipsum dolor sit'
+				imageClass='h-20 w-auto md:-left-28'
+			>
+			</Card>
+			<Card
+				heading='Técnico en Sistemas.'
+				subheading='Servicio Nacional de Aprendizaje - SENA.'
+				date='Enero 2020 - Diciembre 2021'
+				imagePath='/src/assets/study.png'
+				altText='Lorem, ipsum dolor sit'
+				imageClass='h-20 w-auto md:-left-28'
+			/>
+		</Section>
+
+		<Section title='Proyectos.'>
+			<div class='grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-4'>
+				<ProjectCard
+					href='https://github.com/Tobias-Rom3ro/BrickBreaker'
+					heading='Brick Breaker 1999.'
+					subheading='Juego inspirado en el clásico Brick Breaker, hecho en Java aplicando arquitectura MVC.'
+					imagePath='/src/assets/proyect1.png'
+					altText='Juego'
+					class='w-full'
+				/>
+				<ProjectCard
+					href='https://github.com/Tobias-Rom3ro/ChessGame'
+					heading='ChessGame.'
+					subheading='Escritor y lector de partidas de ajedrez en formato PGN mediante juego interactivo, hecho con Java FX.'
+					imagePath='/src/assets/proyect2.png'
+					altText='ChessGame.'
+					class='w-full'
+				/>
+				<ProjectCard
+					href='https://github.com/Tobias-Rom3ro/Calculadora'
+					heading='Calculadora.'
+					subheading='Una combinación de los diseños de la app de calculadora en iOS/MacOS, hecho con Java Swing.'
+					imagePath='/src/assets/calculator.jpg'
+					altText='Calculadora'
+					class='w-full'
+				/>
+				<ProjectCard
+					as='a'
+					heading='Base de Datos / Formula 1.'
+					subheading='Diseño lógico, conceptual y implementación de una BD para la gestión de información de las partidas de la Formula 1.'
+					imagePath='/src/assets/proyect3.png'
+					altText='ChessGame.'
+					class='w-full'
+				/>
+			</div>
+		</Section>
+
+		<Section title='Certificaciones y Reconocimientos.'>
+			<Card
+				as='a'
+				heading='Diseño Gráfico & Publicidad Digital.'
+				subheading='Politécnico de Colombia.'
+				date='Marzo 2023 - Julio 2023'
+				imagePath='/src/assets/certificate.png'
+				altText='Certificado'
+				imageClass='h-12 w-auto md:-left-20'
+			/>
+			<Card
+				as='a'
+				heading='Reconocimiento al Mejor Aprendiz.'
+				subheading='Servicio Nacional de Aprendizaje - SENA.'
+				date='Diciembre 2021'
+				imagePath='/src/assets/award.png'
+				altText='Lorem, ipsum dolor sit'
+				imageClass='h-12 w-auto md:-left-20'
+			/>
+		</Section>
+
+		<Section title='Skills.'>
+			<SkillLayout title='Lenguajes' skills={languages} />
+			<SkillLayout title='Frontend' skills={frontend} />
+			<SkillLayout title='Bases de Datos' skills={databases} />
+			<SkillLayout title='Herramientas' skills={tools} />
+			<SkillLayout title='Habilidades Blandas' skills={softSkills} />
+		</Section>
+	</div>
+	<a
+		href='mailto:tobiasromero1526@gmail.com'
+		class='mt-16 flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
+	>
+		<span class='relative flex items-center justify-center'>
+			<span
+				class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-red-600 bg-red-600 opacity-75'
+			></span>
+			<span class='relative inline-flex h-2 w-2 rounded-full bg-red-400'></span>
+		</span>
+
+		<p class='font-medium'>Envíame un mensaje!</p>
+	</a>
+</PageLayout>

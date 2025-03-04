@@ -1,0 +1,101 @@
+---
+import PageLayout from '@/layouts/BaseLayout.astro'
+import ToolSection from '@/components/ToolSection.astro'
+import Button from '@/components/Button.astro'
+
+const DESIGN = [
+	{
+		name: 'Figma',
+		description: 'Maquetación y diseño de prototipos.',
+		href: 'https://www.figma.com/',
+		iconPath: 'figma',
+		iconBgColour: '#000001'
+	},
+	{
+		name: 'Adobe Photoshop',
+		description: 'Edición de imágenes.',
+		href: 'https://www.adobe.com/es/products/photoshop.html',
+		iconPath: 'photoshop',
+		iconBgColour: '#001D26'
+	},
+	{
+		name: 'Adobe Illustrator',
+		description: 'Diseño vectorial.',
+		href: 'https://www.adobe.com/es/products/illustrator.html',
+		iconPath: 'illustrator',
+		iconBgColour: '#FF9A00'
+	}
+]
+
+const PRODUCTIVITY = [
+	{
+		name: 'Brave',
+		description: 'Navegador web.',
+		href: 'https://brave.com/es/',
+		iconPath: 'brave',
+		iconBgColour: '#414350'
+	},
+	{
+		name: 'Notion',
+		description: 'Organizador de tareas.',
+		href: 'https://www.notion.so/product',
+		iconPath: 'notion',
+		iconBgColour: '#ffffff00'
+	},
+	{
+		name: 'Microsoft Teams',
+		description: 'Comunicación y colaboración.',
+		href: 'https://www.microsoft.com/es-es/microsoft-365/microsoft-teams/group-chat-software',
+		iconPath: 'teams',
+		iconBgColour: '#6264A7'
+	}
+]
+
+const DEVELOPMENT = [
+	{
+		name: 'WebStorm',
+		description: 'IDE',
+		href: 'https://www.jetbrains.com/es-es/webstorm/',
+		iconPath: 'webstorm',
+		iconBgColour: '#000000'
+	},
+	{
+		name: 'ChatGPT',
+		description: 'AI',
+		href: 'https://chat.openai.com/',
+		iconPath: 'chatgpt',
+		iconBgColour: '#06A67F'
+	}
+]
+---
+
+<PageLayout meta={{ title: 'Inicio' }}>
+	<div class='w-full'>
+		<Button title='Atrás' href='/' style='button'>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				width='14'
+				height='14'
+				viewBox='0 0 24 24'
+				slot='icon-before'
+			>
+				<path
+					fill='currentColor'
+					d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
+				>
+				</path>
+			</svg>
+		</Button>
+
+		<div class='mt-5 flex w-full flex-col gap-y-10'>
+			<div>
+				<h1 class='mb-1 text-2xl font-bold'>Herramientas</h1>
+				<p>Software que uso a diario.</p>
+			</div>
+
+			<ToolSection title='Diseño' tools={DESIGN} />
+			<ToolSection title='Productividad' tools={PRODUCTIVITY} />
+			<ToolSection title='Desarrollo' tools={DEVELOPMENT} />
+		</div>
+	</div>
+</PageLayout>
